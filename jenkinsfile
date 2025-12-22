@@ -1,0 +1,13 @@
+node {
+    def mvnHome
+    stage('clone') { 
+        git 'https://github.com/A-suma/java-hello-world-with-maven.git'
+        
+    }
+    stage('test') {
+        sh 'mvn test'
+    }
+    stage('build') {
+        sh 'mvn package'
+    }
+}
